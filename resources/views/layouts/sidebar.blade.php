@@ -66,6 +66,15 @@
                     </a>
                 </li>
 
+                {{-- <li class="nav-item">
+                    <a href="{{ route('score') }}" class="nav-link {{ request()->is('score') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-calculator"></i>
+                        <p>
+                            Score
+                        </p>
+                    </a>
+                </li> --}}
+
                 <li class="nav-item">
                     <a href="{{ route('jurusan') }}" class="nav-link {{ request()->is('jurusan') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-book-reader"></i>
