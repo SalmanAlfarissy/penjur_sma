@@ -31,7 +31,6 @@ class Semester2Controller extends Controller
 
     public function update(Request $request,$id){
         $validate = $request->validate([
-            'student_id'=>'',
             'mtk'=>'required',
             'bing'=>'required',
             'bind'=>'required',
@@ -40,7 +39,6 @@ class Semester2Controller extends Controller
         ]);
 
         $data = Semester2::find($id);
-        $data->student_id = $validate['student_id'];
         $data->mtk  = $validate['mtk'];
         $data->bing  = $validate['bing'];
         $data->bind  = $validate['bind'];

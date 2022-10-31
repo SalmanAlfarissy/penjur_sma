@@ -59,6 +59,7 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::prefix('/score')->group(function(){
         Route::get('/', [ScoreController::class,'index'])->name('score');
         Route::get('/getDataScore', [ScoreController::class,'getData'])->name('getdata-score');
+        Route::post('/deleteScore/{id}',[ScoreController::class,'delete'])->name('delete-score');
     });
 
     Route::prefix('/semester1')->group(function(){

@@ -30,8 +30,11 @@
                             <th>No</th>
                             <th>Name</th>
                             <th>Nisn</th>
-                            <th>Jekel</th>
-                            <th>Created At</th>
+                            <th>MTK</th>
+                            <th>BING</th>
+                            <th>BIND</th>
+                            <th>IPA</th>
+                            <th>IPS</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -268,115 +271,115 @@
                         <tr>
                             <form id="editSemester1">
                                 @csrf
-                                <input type="hidden" name="id">
+                                <input type="hidden" class="semester1-id" name="id">
                                 <td>1</td>
                                 <td>Semester 1</td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control semester1-mtk" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control semester1-bing" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control semester1-bind" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control semester1-ipa" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control semester1-ips" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                             </form>
                         </tr>
                         <tr>
                             <form id="editSemester2">
                                 @csrf
-                                <input type="hidden" name="id">
+                                <input type="hidden" class="semester2-id" name="id">
                                 <td>2</td>
                                 <td>Semester 2</td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control semester2-mtk" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control semester2-bing" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control semester2-bind" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control semester2-ipa" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control semester2-ips" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                             </form>
                         </tr>
                         <tr>
                             <form id="editSemester3">
                                 @csrf
-                                <input type="hidden" name="id">
+                                <input type="hidden" class="semester3-id" name="id">
                                 <td>3</td>
                                 <td>Semester 3</td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control semester3-mtk" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control semester3-bing" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control semester3-bind" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control semester3-ipa" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control semester3-ips" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                             </form>
                         </tr>
                         <tr>
                             <form id="editSemester4">
                                 @csrf
-                                <input type="hidden" name="id">
+                                <input type="hidden" class="semester4-id" name="id">
                                 <td>4</td>
                                 <td>Semester 4</td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control semester4-mtk" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control semester4-bing" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control semester4-bind" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control semester4-ipa" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control semester4-ips" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                             </form>
                         </tr>
                         <tr>
                             <form id="editSemester5">
                                 @csrf
-                                <input type="hidden" name="id">
+                                <input type="hidden" class="semester5-id" name="id">
                                 <td>5</td>
                                 <td>Semester 5</td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control semester5-mtk" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control semester5-bing" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control semester5-bind" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control semester5-ipa" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control semester5-ips" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                             </form>
                         </tr>
@@ -386,7 +389,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary btn-create">Save Data</button>
+                <button type="button" class="btn btn-primary btn-update">Save Data</button>
             </div>
         </div>
     </div>
@@ -409,7 +412,7 @@
     function readData(){
         $.ajax({
             type: "GET",
-            url: "",
+            url: "{{ route('getdata-score') }}",
             data: {},
         }).done(function(result){
                 $('#dataTable').DataTable({
@@ -422,14 +425,17 @@
                         {"data": "no"},
                         {"data": "name"},
                         {"data": "nisn"},
-                        {"data": "jekel"},
-                        {"data": "date"},
-                        {"data": "id"},
+                        {"data": "r_mtk"},
+                        {"data": "r_bing"},
+                        {"data": "r_bind"},
+                        {"data": "r_ipa"},
+                        {"data": "r_ips"},
+                        {"data": "nisn"},
                     ],
                     "columnDefs":[
                         {
-                            "targets" : 5,
-                            "data" : "id",
+                            "targets" : 8,
+                            "data" : "nisn",
                             "render":function(data, type, row){
                                 return '<div class="btn-group">'+
                                 '<button type="button" class="btn btn-primary">Action</button>'+
@@ -563,22 +569,68 @@
 
 // }
 
-    $(document).on('click', '.btn-edit', function(){
+    $(document).on('click', '.btn-edit', function(e){
+        e.preventDefault();
         $.ajax({
             type: "GET",
-            url: "{{ route('getdata-student') }}",
+            url: "{{ route('getdata-score') }}",
             data: {
-                id: $(this).data('id'),
+                nisn: $(this).data('id'),
             },
             success: function (result) {
                 if (result.data) {
-                    var form = $('#form-edit');
+                    var student = $('#editStudent');
+
                     var data = result.data;
 
-                    form.find('input[name=id]').val(data.id);
-                    form.find('input[name=name]').val(data.name);
-                    form.find('input[name=nisn]').val(data.nisn);
-                    form.find('select[name=jekel]').val(data.jekel);
+                    // student {
+                        student.find('input[name=id]').val(data.id);
+                        student.find('input[name=name]').val(data.name);
+                        student.find('input[name=nisn]').val(data.nisn);
+                        student.find('select[name=jekel]').val(data.jekel);
+                    // }
+
+                    // semester1 {
+                        $('.semester1-id').val(data.semester1.id);
+                        $('.semester1-mtk').val(data.semester1.mtk);
+                        $('.semester1-bing').val(data.semester1.bing);
+                        $('.semester1-bind').val(data.semester1.bind);
+                        $('.semester1-ipa').val(data.semester1.ipa);
+                        $('.semester1-ips').val(data.semester1.ips);
+                    // }
+                    // semester2 {
+                        $('.semester2-id').val(data.semester2.id);
+                        $('.semester2-mtk').val(data.semester2.mtk);
+                        $('.semester2-bing').val(data.semester2.bing);
+                        $('.semester2-bind').val(data.semester2.bind);
+                        $('.semester2-ipa').val(data.semester2.ipa);
+                        $('.semester2-ips').val(data.semester2.ips);
+                    // }
+                    // semester3 {
+                        $('.semester3-id').val(data.semester3.id);
+                        $('.semester3-mtk').val(data.semester3.mtk);
+                        $('.semester3-bing').val(data.semester3.bing);
+                        $('.semester3-bind').val(data.semester3.bind);
+                        $('.semester3-ipa').val(data.semester3.ipa);
+                        $('.semester3-ips').val(data.semester3.ips);
+                    // }
+                    // semester4 {
+                        $('.semester4-id').val(data.semester4.id);
+                        $('.semester4-mtk').val(data.semester4.mtk);
+                        $('.semester4-bing').val(data.semester4.bing);
+                        $('.semester4-bind').val(data.semester4.bind);
+                        $('.semester4-ipa').val(data.semester4.ipa);
+                        $('.semester4-ips').val(data.semester4.ips);
+                    // }
+                    // semester5 {
+                        $('.semester5-id').val(data.semester5.id);
+                        $('.semester5-mtk').val(data.semester5.mtk);
+                        $('.semester5-bing').val(data.semester5.bing);
+                        $('.semester5-bind').val(data.semester5.bind);
+                        $('.semester5-ipa').val(data.semester5.ipa);
+                        $('.semester5-ips').val(data.semester5.ips);
+                    // }
+
                     $('#modalEdit').modal('show');
 
                 }else{
@@ -592,15 +644,101 @@
         });
     });
 
-    $(document).on('submit', '#form-edit', function(e){
+    // update Semester 1
+    function updateSemester1(){
+        var form = $('#editSemester1');
+        $.ajax({
+            type: "POSt",
+            url: "{{ route('update-semester1','') }}/"+$('.semester1-id').val(),
+            data: form.serialize(),
+            success: function (result) {
+                form.trigger('reset')
+                console.log('Semester 1 : ',result.message);
+            },
+            error: function(xhr, error){
+                console.log(error);
+            }
+        });
+    }
+    // create Semester 2
+    function updateSemester2(){
+        var form = $('#editSemester2');
+        $.ajax({
+            type: "POSt",
+            url: "{{ route('update-semester2','') }}/"+$('.semester2-id').val(),
+            data: form.serialize(),
+            success: function (result) {
+                form.trigger('reset')
+                console.log('Semester 2 : ',result.message);
+            },
+            error: function(xhr, error){
+                console.log(error);
+            }
+        });
+    }
+    // create Semester 3
+    function updateSemester3(){
+        var form = $('#editSemester3');
+        $.ajax({
+            type: "POSt",
+            url: "{{ route('update-semester3','') }}/"+$('.semester3-id').val(),
+            data: form.serialize(),
+            success: function (result) {
+                form.trigger('reset')
+                console.log('Semester 3 : ',result.message);
+            },
+            error: function(xhr, error){
+                console.log(error);
+            }
+        });
+    }
+    // create Semester 4
+    function updateSemester4(){
+        var form = $('#editSemester4');
+        $.ajax({
+            type: "POSt",
+            url: "{{ route('update-semester4','') }}/"+$('.semester4-id').val(),
+            data: form.serialize(),
+            success: function (result) {
+                form.trigger('reset')
+                console.log('Semester 4 : ',result.message);
+            },
+            error: function(xhr, error){
+                console.log(error);
+            }
+        });
+    }
+    // create Semester 5
+    function updateSemester5(){
+        var form = $('#editSemester5');
+        $.ajax({
+            type: "POSt",
+            url: "{{ route('update-semester5','') }}/"+$('.semester5-id').val(),
+            data: form.serialize(),
+            success: function (result) {
+                form.trigger('reset')
+                console.log('Semester 5 : ',result.message);
+            },
+            error: function(xhr, error){
+                console.log(error);
+            }
+        });
+    }
+
+    $(document).on('click', '.btn-update', function(e){
         e.preventDefault();
-        var form = $(this);
+        var form = $('#editStudent');
         $.ajax({
             type: "POST",
             url: "{{ route('update-student','') }}/"+form.find("input[name=id]").val(),
             data: form.serialize(),
             success: function (result) {
                 if(result.status){
+                    updateSemester1();
+                    updateSemester2();
+                    updateSemester3();
+                    updateSemester4();
+                    updateSemester5();
                     $("#modalEdit").modal('hide');
                     swal(result.message, "You clicked the button!", "success");
                     readData();
@@ -631,12 +769,13 @@
             if (willDelete) {
                 var inputToken = $('input[name=_token]');
                 $.ajax({
-                    url : "{{ route('delete-student','') }}/"+$(this).data('id'),
+                    url : "{{ route('delete-score','') }}/"+$(this).data('id'),
                     type : 'POST',
                     data : {
                         _token: inputToken.val(),
                     }
                 }).done(function(result){
+
                     inputToken.val(result.newToken);
                     if(result.status){
                         readData();
