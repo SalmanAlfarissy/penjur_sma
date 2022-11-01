@@ -1,9 +1,9 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link bg-primary">
-        <img src="/images/app/udacoding.jpeg" alt="Udacoding Logo" class="brand-image img-circle elevation-3"
+        <img src="/images/app/suger.jpeg" alt="Suger Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
-        <span class="brand-text font-weight-light">Udacoding</span>
+        <span class="brand-text font-weight-light">SMANSASUGER</span>
     </a>
 
     <!-- Sidebar -->

@@ -1,10 +1,10 @@
 @extends('layouts.main')
 
 @section('title','Penjur SMA')
-@section('page_title','Students')
+@section('page_title','Jurusan')
 @section('breadcrumb')
 <li class="breadcrumb-item"><a href="/">Home</a></li>
-<li class="breadcrumb-item active">Students</li>
+<li class="breadcrumb-item active">Jurusan</li>
 @endsection
 
 @section('content')
@@ -30,11 +30,8 @@
                             <th>No</th>
                             <th>Name</th>
                             <th>Nisn</th>
-                            <th>MTK</th>
-                            <th>BING</th>
-                            <th>BIND</th>
-                            <th>IPA</th>
-                            <th>IPS</th>
+                            <th>Nilai</th>
+                            <th>Jurusan</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -56,159 +53,85 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <form class="col-md-6" id="createStudent">
+                    <form class="col-md-6" id="createJurusan">
                         @csrf
                         <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" placeholder="Name" name="name" required>
-                        </div>
+                            <label>Name & NISN</label>
+                            <select class="form-control select2-create" style="width: 100%;" name="nisn">
+                                <option selected value="">==Please Select Item==</option>
+                                @foreach ($data as $item )
+                                    <option value="{{ $item->nisn }}">{{ $item->name }} - {{ $item->nisn }}</option>
+                                @endforeach
 
-                        <div class="form-group">
-                            <label>Nisn</label>
-                            <input type="text" class="form-control" placeholder="Nisn" name="nisn" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Jenis Kelamin</label>
-                            <select class="form-control" name="jekel">
-                              <option selected value="L">Laki-Laki</option>
-                              <option value="P">Perempuan</option>
                             </select>
                         </div>
                     </form>
                     <div class="col-md-6 ml-auto"></div>
                 </div>
+                <div class="from-group">
+                    <label>Rata - Rata Nilai</label>
+                </div>
                 <div class="card-body p-0">
                     <table class="table table-sm table-hover text-nowrap">
-                      <thead>
-                        <tr>
-                          <th style="width: 10px">No</th>
-                          <th>Semester</th>
-                          <th>MTK</th>
-                          <th>BING</th>
-                          <th>BIND</th>
-                          <th>IPA</th>
-                          <th>IPS</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                            <form id="createSemester1">
-                                @csrf
-                                <input type="hidden" name="student_id" class="student_id">
-                                <td>1</td>
-                                <td>Semester 1</td>
-                                <td>
-                                    <input type="number" class="form-control" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                            </form>
-                        </tr>
-                        <tr>
-                            <form id="createSemester2">
-                                @csrf
-                                <input type="hidden" name="student_id" class="student_id">
-                                <td>2</td>
-                                <td>Semester 2</td>
-                                <td>
-                                    <input type="number" class="form-control" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                            </form>
-                        </tr>
-                        <tr>
-                            <form id="createSemester3">
-                                @csrf
-                                <input type="hidden" name="student_id" class="student_id">
-                                <td>3</td>
-                                <td>Semester 3</td>
-                                <td>
-                                    <input type="number" class="form-control" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                            </form>
-                        </tr>
-                        <tr>
-                            <form id="createSemester4">
-                                @csrf
-                                <input type="hidden" name="student_id" class="student_id">
-                                <td>4</td>
-                                <td>Semester 4</td>
-                                <td>
-                                    <input type="number" class="form-control" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                            </form>
-                        </tr>
-                        <tr>
-                            <form id="createSemester5">
-                                @csrf
-                                <input type="hidden" name="student_id" class="student_id">
-                                <td>5</td>
-                                <td>Semester 5</td>
-                                <td>
-                                    <input type="number" class="form-control" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                            </form>
-                        </tr>
-                      </tbody>
-                    </table>
+                        <thead>
+                          <tr>
+                            <th>Mata Pelajaran</th>
+                            <th>Rata-Rata Nilai</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                              <form id="createSemester1">
+                                  @csrf
+                                  <td>MTK</td>
+                                  <td>
+                                      <input type="hidden" name="mtk" class="r_mtk">
+                                      <input type="number" class="form-control r_mtk" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" disabled>
+                                  </td>
+                              </form>
+                          </tr>
+                          <tr>
+                              <form id="createSemester2">
+                                  @csrf
+                                  <td>BING</td>
+                                  <td>
+                                      <input type="hidden" name="bing" class="r_bing">
+                                      <input type="number" class="form-control r_bing" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" disabled>
+                                  </td>
+                              </form>
+                          </tr>
+                          <tr>
+                              <form id="createSemester3">
+                                  @csrf
+                                  <td>BIND</td>
+                                  <td>
+                                      <input type="hidden" name="bind" class="r_bind">
+                                      <input type="number" class="form-control r_bind" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" disabled>
+                                  </td>
+                              </form>
+                          </tr>
+                          <tr>
+                              <form id="createSemester4">
+                                  @csrf
+                                  <td>IPA</td>
+                                  <td>
+                                      <input type="hidden" name="ipa" class="r_ipa">
+                                      <input type="number" class="form-control r_ipa" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" disabled>
+                                  </td>
+                              </form>
+                          </tr>
+                          <tr>
+                              <form id="createSemester5">
+                                  @csrf
+                                  <td>IPS</td>
+                                  <td>
+                                      <input type="hidden" name="ips" class="r_ips">
+                                      <input type="number" class="form-control r_ips" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" disabled>
+                                  </td>
+                              </form>
+                          </tr>
+                        </tbody>
+                      </table>
                 </div>
             </div>
             <div class="modal-footer">
@@ -220,7 +143,7 @@
 </div>
 
 <!-- Modal Edit -->
-<div class="modal fade" id="modalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+{{-- <div class="modal fade" id="modalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
             <div class="modal-header">
@@ -393,7 +316,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 
 @endsection
@@ -404,6 +327,40 @@
     $(document).ready(function () {
         readData();
     });
+
+    $('.select2-create').select2({
+        theme: 'bootstrap4',
+        dropdownParent: $("#createJurusan"),
+    }).on('change', function(e){
+        e.preventDefault()
+        $.ajax({
+            type: "GET",
+            url: "{{ route('getdata-score') }}",
+            data: {
+                nisn: $('#createJurusan').find('select[name=nisn]').val(),
+            },
+            success: function (result) {
+                if (result.data) {
+                    var data = result.data;
+
+                    // rata-rata nilai {
+                        $('.r_mtk').val(data.r_mtk);
+                        $('.r_bing').val(data.r_bing);
+                        $('.r_bind').val(data.r_bind);
+                        $('.r_ipa').val(data.r_ipa);
+                        $('.r_ips').val(data.r_ips);
+                    // }
+
+                }else{
+                    alert('Data not found!!');
+                }
+            },
+            error: function(xhr, error){
+                console.log(xhr);
+                console.log(error);
+            }
+        });
+    })
 
     function setNumberDecimal(event) {
         this.value = parseFloat(this.value).toFixed(3);
@@ -427,14 +384,11 @@
                         {"data": "nisn"},
                         {"data": "r_mtk"},
                         {"data": "r_bing"},
-                        {"data": "r_bind"},
-                        {"data": "r_ipa"},
-                        {"data": "r_ips"},
                         {"data": "nisn"},
                     ],
                     "columnDefs":[
                         {
-                            "targets" : 8,
+                            "targets" : 5,
                             "data" : "nisn",
                             "render":function(data, type, row){
                                 return '<div class="btn-group">'+
@@ -456,119 +410,6 @@
             console.log(error);
         });
     }
-
-// {
-
-    // create Semester 1
-    function createSemester1(){
-        var form = $('#createSemester1');
-        $.ajax({
-            type: "POSt",
-            url: "{{ route('create-semester1') }}",
-            data: form.serialize(),
-            success: function (result) {
-                form.trigger('reset')
-                console.log('Semester 1 : ',result.message);
-            },
-            error: function(xhr, error){
-                console.log(error);
-            }
-        });
-    }
-    // create Semester 2
-    function createSemester2(){
-        var form = $('#createSemester2');
-        $.ajax({
-            type: "POSt",
-            url: "{{ route('create-semester2') }}",
-            data: form.serialize(),
-            success: function (result) {
-                form.trigger('reset')
-                console.log('Semester 2 : ',result.message);
-            },
-            error: function(xhr, error){
-                console.log(error);
-            }
-        });
-    }
-    // create Semester 3
-    function createSemester3(){
-        var form = $('#createSemester3');
-        $.ajax({
-            type: "POSt",
-            url: "{{ route('create-semester3') }}",
-            data: form.serialize(),
-            success: function (result) {
-                form.trigger('reset')
-                console.log('Semester 3 : ',result.message);
-            },
-            error: function(xhr, error){
-                console.log(error);
-            }
-        });
-    }
-    // create Semester 4
-    function createSemester4(){
-        var form = $('#createSemester4');
-        $.ajax({
-            type: "POSt",
-            url: "{{ route('create-semester4') }}",
-            data: form.serialize(),
-            success: function (result) {
-                form.trigger('reset')
-                console.log('Semester 4 : ',result.message);
-            },
-            error: function(xhr, error){
-                console.log(error);
-            }
-        });
-    }
-    // create Semester 5
-    function createSemester5(){
-        var form = $('#createSemester5');
-        $.ajax({
-            type: "POSt",
-            url: "{{ route('create-semester5') }}",
-            data: form.serialize(),
-            success: function (result) {
-                form.trigger('reset')
-                console.log('Semester 5 : ',result.message);
-            },
-            error: function(xhr, error){
-                console.log(error);
-            }
-        });
-    }
-    // create students
-    $(document).on('click','.btn-create', function(e){
-        e.preventDefault();
-
-        var form = $('#createStudent');
-        $.ajax({
-            type: "POST",
-            url: "{{ route('create-student') }}",
-            data: form.serialize(),
-            success: function (result) {
-                $('.student_id').val(result.data.id);
-                createSemester1();
-                createSemester2();
-                createSemester3();
-                createSemester4();
-                createSemester5();
-                readData();
-                $("#modalCreate").modal('hide');
-                swal(result.message, "You clicked the button!", "success");
-                form.trigger('reset')
-
-            },
-            error : function(xhr, error){
-                console.log(xhr);
-                console.log(error);
-            }
-        });
-    })
-
-// }
 
     $(document).on('click', '.btn-edit', function(e){
         e.preventDefault();
@@ -645,86 +486,6 @@
         });
     });
 
-    // update Semester 1
-    function updateSemester1(){
-        var form = $('#editSemester1');
-        $.ajax({
-            type: "POSt",
-            url: "{{ route('update-semester1','') }}/"+$('.semester1-id').val(),
-            data: form.serialize(),
-            success: function (result) {
-                form.trigger('reset')
-                console.log('Semester 1 : ',result.message);
-            },
-            error: function(xhr, error){
-                console.log(error);
-            }
-        });
-    }
-    // create Semester 2
-    function updateSemester2(){
-        var form = $('#editSemester2');
-        $.ajax({
-            type: "POSt",
-            url: "{{ route('update-semester2','') }}/"+$('.semester2-id').val(),
-            data: form.serialize(),
-            success: function (result) {
-                form.trigger('reset')
-                console.log('Semester 2 : ',result.message);
-            },
-            error: function(xhr, error){
-                console.log(error);
-            }
-        });
-    }
-    // create Semester 3
-    function updateSemester3(){
-        var form = $('#editSemester3');
-        $.ajax({
-            type: "POSt",
-            url: "{{ route('update-semester3','') }}/"+$('.semester3-id').val(),
-            data: form.serialize(),
-            success: function (result) {
-                form.trigger('reset')
-                console.log('Semester 3 : ',result.message);
-            },
-            error: function(xhr, error){
-                console.log(error);
-            }
-        });
-    }
-    // create Semester 4
-    function updateSemester4(){
-        var form = $('#editSemester4');
-        $.ajax({
-            type: "POSt",
-            url: "{{ route('update-semester4','') }}/"+$('.semester4-id').val(),
-            data: form.serialize(),
-            success: function (result) {
-                form.trigger('reset')
-                console.log('Semester 4 : ',result.message);
-            },
-            error: function(xhr, error){
-                console.log(error);
-            }
-        });
-    }
-    // create Semester 5
-    function updateSemester5(){
-        var form = $('#editSemester5');
-        $.ajax({
-            type: "POSt",
-            url: "{{ route('update-semester5','') }}/"+$('.semester5-id').val(),
-            data: form.serialize(),
-            success: function (result) {
-                form.trigger('reset')
-                console.log('Semester 5 : ',result.message);
-            },
-            error: function(xhr, error){
-                console.log(error);
-            }
-        });
-    }
 
     $(document).on('click', '.btn-update', function(e){
         e.preventDefault();

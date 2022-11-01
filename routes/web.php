@@ -25,6 +25,10 @@ use App\Http\Controllers\Semester5Controller;
 |
 */
 
+Route::get('/', function () {
+    return redirect(route('login'));
+});
+
 Route::get('/login', [LoginController::class,'index'])->name('login');
 Route::post('/auth-login', [LoginController::class,'authLogin'])->name('authLogin');
 
@@ -54,6 +58,7 @@ Route::middleware(['auth', 'web'])->group(function () {
 
     Route::prefix('/jurusan')->group(function(){
         Route::get('/', [ResultController::class,'index'])->name('jurusan');
+        Route::get('/resultValue', [ResultController::class,'resultValue'])->name('jurusan-resultvalue');
     });
 
     Route::prefix('/score')->group(function(){

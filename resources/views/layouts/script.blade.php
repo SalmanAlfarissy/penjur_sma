@@ -19,6 +19,9 @@
 <script src="{{ asset('adminlte/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
 <script src="{{ asset('adminlte/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
 
+<!-- Select2 -->
+<script src="{{ asset('adminlte/plugins/select2/js/select2.full.min.js') }}"></script>
+
 {{-- sweetalert --}}
 <script src="{{ asset('adminlte/dist/sweetalert.min.js') }}"></script>
 

@@ -185,8 +185,9 @@
             success: function (result) {
                 $("#modalCreate").modal('hide');
                 swal(result.message, "You clicked the button!", "success");
-                $('#form-create').trigger('reset')
                 readData();
+                $('#form-create').trigger('reset')
+
             },
             error : function(xhr, error){
                 console.log(xhr);
