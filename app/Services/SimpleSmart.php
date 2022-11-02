@@ -37,6 +37,7 @@ class SimpleSmart extends Controller
 
         //total value
         $tot_value = $res_mtk + $res_bing + $res_bind +$res_ipa + $res_ips;
+        $tot_value = round($tot_value,3);
 
         $result = [
             'name'=> $data->name,
