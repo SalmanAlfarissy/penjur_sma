@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CetakController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -36,6 +37,7 @@ Route::get('/logout', function () {
     Auth::logout();
     return redirect('/login');
 })->name('logout');
+
 
 Route::middleware(['auth', 'web'])->group(function () {
     Route::get('/dashboard', [HomeController::class,'index'])->name('dashboard');
@@ -90,6 +92,11 @@ Route::middleware(['auth', 'web'])->group(function () {
     Route::prefix('/semester5')->group(function(){
         Route::post('/createSemester5', [Semester5Controller::class,'create'])->name('create-semester5');
         Route::post('/updateSemester5/{id}', [Semester5Controller::class,'update'])->name('update-semester5');
+    });
+
+    Route::prefix('/cetak')->group(function(){
+        Route::get('/excel', [CetakController::class,'cetakExcel'])->name('cetak-excel');
+        Route::get('/pdf', [CetakController::class,'cetakPdf'])->name('cetak-pdf');
     });
 
 

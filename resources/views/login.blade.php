@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Login</title>
 
+  {{-- icon --}}
+  <link rel="shortcut icon" href="{{ asset('images/app/suger.jpeg') }}" type="image/x-icon">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -30,7 +32,10 @@
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="#" class="h1"><b>Admin</b>LTE</a>
+        <div class="image">
+            <img src="{{ asset('images/app/suger.jpeg') }}" class="img-circle elevation-2" alt="User Image">
+        </div>
+      <a href="#" class="h1"><b>SMANSA</b>SUGER</a>
     </div>
     <div class="card-body">
       <p class="login-box-msg">Sign in to start your session</p>

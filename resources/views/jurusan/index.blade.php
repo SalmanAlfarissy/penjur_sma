@@ -24,8 +24,8 @@
               <span class="sr-only">Toggle Dropdown</span>
             </button>
             <div class="dropdown-menu" role="menu">
-              <a class="dropdown-item" href="#">Excel</a>
-              <a class="dropdown-item" href="#">Pdf</a>
+              <a class="dropdown-item" target="_blank" href="{{ route('cetak-excel') }}">Excel</a>
+              <a class="dropdown-item" target="_blank" href="{{ route('cetak-pdf') }}">Pdf</a>
             </div>
         </div>
     </div>
