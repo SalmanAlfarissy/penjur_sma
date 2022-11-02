@@ -10,11 +10,26 @@
 @section('content')
 <div class="row">
     <div class="col-md-2">
-        <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#modalCreate">
+        {{-- <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#modalCreate">
            + Create
+        </button> --}}
+        <button type="button" class="btn btn-block btn-success" data-toggle="modal" data-target="#modalCreate">
+            <i class="fa fa-plus"></i> Tambah Data
         </button>
     </div>
-    <div class="col-md-10">
+    <div class="col-md-2">
+        <div class="btn-group">
+            <button type="button" class="btn btn-info"><i class="fa fa-print"></i> Cetak</button>
+            <button type="button" class="btn btn-info dropdown-toggle dropdown-icon" data-toggle="dropdown">
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <div class="dropdown-menu" role="menu">
+              <a class="dropdown-item" href="#">Excel</a>
+              <a class="dropdown-item" href="#">Pdf</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
     </div>
 
     <div class="col-md-12">
@@ -65,6 +80,8 @@
 
                             </select>
                         </div>
+                        <input type="hidden" class="result" name="result">
+                        <input type="hidden" class="jurusan" name="jurusan">
                     </form>
                     <div class="col-md-6 ml-auto"></div>
                 </div>
@@ -133,6 +150,19 @@
                         </tbody>
                       </table>
                 </div>
+                <div class="from-group">
+                    <label>Hasil</label>
+                </div>
+                <form class="col-md-6">
+                    <div class="form-group">
+                        <label>Result Value</label>
+                        <input type="number" class="form-control result" placeholder="Result Value" name="result" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>Jurusan</label>
+                        <input type="text" class="form-control jurusan" placeholder="Jurusan" name="jurusan" disabled>
+                    </div>
+                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -142,173 +172,108 @@
     </div>
 </div>
 
-<!-- Modal Edit -->
-{{-- <div class="modal fade" id="modalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modal Edit-->
+<div class="modal fade" id="modalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Data</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Create Data</h1>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <form class="col-md-6" id="editStudent">
+                    <form class="col-md-6" id="editJurusan">
                         @csrf
                         <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" placeholder="Name" name="name" required>
-                            <input type="hidden" name="id">
+                            <label>Name & NISN</label>
+                            <input type="text" class="form-control" placeholder="name" name="nisn"  disabled>
                         </div>
-
-                        <div class="form-group">
-                            <label>Nisn</label>
-                            <input type="text" class="form-control" placeholder="Nisn" name="nisn" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Jenis Kelamin</label>
-                            <select class="form-control" name="jekel">
-                              <option selected value="L">Laki-Laki</option>
-                              <option value="P">Perempuan</option>
-                            </select>
-                        </div>
+                        <input type="hidden" name="nisn" class="nisn">
+                        <input type="hidden" class="result" name="result">
+                        <input type="hidden" class="jurusan" name="jurusan">
                     </form>
                     <div class="col-md-6 ml-auto"></div>
                 </div>
+                <div class="from-group">
+                    <label>Rata - Rata Nilai</label>
+                </div>
                 <div class="card-body p-0">
                     <table class="table table-sm table-hover text-nowrap">
-                      <thead>
-                        <tr>
-                          <th style="width: 10px">No</th>
-                          <th>Semester</th>
-                          <th>MTK</th>
-                          <th>BING</th>
-                          <th>BIND</th>
-                          <th>IPA</th>
-                          <th>IPS</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                            <form id="editSemester1">
-                                @csrf
-                                <input type="hidden" class="semester1-id" name="id">
-                                <td>1</td>
-                                <td>Semester 1</td>
-                                <td>
-                                    <input type="number" class="form-control semester1-mtk" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control semester1-bing" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control semester1-bind" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control semester1-ipa" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control semester1-ips" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                            </form>
-                        </tr>
-                        <tr>
-                            <form id="editSemester2">
-                                @csrf
-                                <input type="hidden" class="semester2-id" name="id">
-                                <td>2</td>
-                                <td>Semester 2</td>
-                                <td>
-                                    <input type="number" class="form-control semester2-mtk" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control semester2-bing" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control semester2-bind" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control semester2-ipa" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control semester2-ips" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                            </form>
-                        </tr>
-                        <tr>
-                            <form id="editSemester3">
-                                @csrf
-                                <input type="hidden" class="semester3-id" name="id">
-                                <td>3</td>
-                                <td>Semester 3</td>
-                                <td>
-                                    <input type="number" class="form-control semester3-mtk" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control semester3-bing" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control semester3-bind" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control semester3-ipa" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control semester3-ips" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                            </form>
-                        </tr>
-                        <tr>
-                            <form id="editSemester4">
-                                @csrf
-                                <input type="hidden" class="semester4-id" name="id">
-                                <td>4</td>
-                                <td>Semester 4</td>
-                                <td>
-                                    <input type="number" class="form-control semester4-mtk" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control semester4-bing" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control semester4-bind" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control semester4-ipa" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control semester4-ips" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                            </form>
-                        </tr>
-                        <tr>
-                            <form id="editSemester5">
-                                @csrf
-                                <input type="hidden" class="semester5-id" name="id">
-                                <td>5</td>
-                                <td>Semester 5</td>
-                                <td>
-                                    <input type="number" class="form-control semester5-mtk" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control semester5-bing" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control semester5-bind" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control semester5-ipa" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                                <td>
-                                    <input type="number" class="form-control semester5-ips" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
-                                </td>
-                            </form>
-                        </tr>
-                      </tbody>
-                    </table>
+                        <thead>
+                          <tr>
+                            <th>Mata Pelajaran</th>
+                            <th>Rata-Rata Nilai</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                              <form id="editSemester1">
+                                  @csrf
+                                  <td>MTK</td>
+                                  <td>
+                                      <input type="hidden" name="mtk" class="r_mtk">
+                                      <input type="number" class="form-control r_mtk" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" disabled>
+                                  </td>
+                              </form>
+                          </tr>
+                          <tr>
+                              <form id="editSemester2">
+                                  @csrf
+                                  <td>BING</td>
+                                  <td>
+                                      <input type="hidden" name="bing" class="r_bing">
+                                      <input type="number" class="form-control r_bing" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" disabled>
+                                  </td>
+                              </form>
+                          </tr>
+                          <tr>
+                              <form id="editSemester3">
+                                  @csrf
+                                  <td>BIND</td>
+                                  <td>
+                                      <input type="hidden" name="bind" class="r_bind">
+                                      <input type="number" class="form-control r_bind" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" disabled>
+                                  </td>
+                              </form>
+                          </tr>
+                          <tr>
+                              <form id="editSemester4">
+                                  @csrf
+                                  <td>IPA</td>
+                                  <td>
+                                      <input type="hidden" name="ipa" class="r_ipa">
+                                      <input type="number" class="form-control r_ipa" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" disabled>
+                                  </td>
+                              </form>
+                          </tr>
+                          <tr>
+                              <form id="editSemester5">
+                                  @csrf
+                                  <td>IPS</td>
+                                  <td>
+                                      <input type="hidden" name="ips" class="r_ips">
+                                      <input type="number" class="form-control r_ips" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" disabled>
+                                  </td>
+                              </form>
+                          </tr>
+                        </tbody>
+                      </table>
                 </div>
+                <div class="from-group">
+                    <label>Hasil</label>
+                </div>
+                <form class="col-md-6">
+                    <div class="form-group">
+                        <label>Result Value</label>
+                        <input type="number" class="form-control result" placeholder="Result Value" name="result" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>Jurusan</label>
+                        <input type="text" class="form-control jurusan" placeholder="Jurusan" name="jurusan" disabled>
+                    </div>
+                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -316,7 +281,7 @@
             </div>
         </div>
     </div>
-</div> --}}
+</div>
 
 
 @endsection
@@ -326,6 +291,27 @@
 
     $(document).ready(function () {
         readData();
+    });
+
+    function resultValue(nisn){
+        $.ajax({
+            type: "GET",
+            url: "{{ route('resultvalue-jurusan') }}",
+            data: {
+                nisn: nisn,
+            },
+            success: function (result) {
+                var data = result.data;
+                $('.result').val(data.tot_value);
+                $('.jurusan').val(data.jurusan);
+                $('.nisn').val(data.nisn);
+            }
+        });
+    }
+
+    $('.select2-edit').select2({
+        theme: 'bootstrap4',
+        dropdownParent: $("#editJurusan"),
     });
 
     $('.select2-create').select2({
@@ -350,6 +336,9 @@
                         $('.r_ipa').val(data.r_ipa);
                         $('.r_ips').val(data.r_ips);
                     // }
+                    //result
+                    var nisn = data.nisn;
+                    resultValue(nisn);
 
                 }else{
                     alert('Data not found!!');
@@ -369,7 +358,7 @@
     function readData(){
         $.ajax({
             type: "GET",
-            url: "{{ route('getdata-score') }}",
+            url: "{{ route('getdata-jurusan') }}",
             data: {},
         }).done(function(result){
                 $('#dataTable').DataTable({
@@ -382,8 +371,8 @@
                         {"data": "no"},
                         {"data": "name"},
                         {"data": "nisn"},
-                        {"data": "r_mtk"},
-                        {"data": "r_bing"},
+                        {"data": "result"},
+                        {"data": "jurusan"},
                         {"data": "nisn"},
                     ],
                     "columnDefs":[
@@ -411,6 +400,30 @@
         });
     }
 
+    // create jurusan
+    $(document).on('click','.btn-create', function(e){
+        e.preventDefault();
+
+        var form = $('#createJurusan');
+        $.ajax({
+            type: "POST",
+            url: "{{ route('create-jurusan') }}",
+            data: form.serialize(),
+            success: function (result) {
+                $("#modalCreate").modal('hide');
+                swal(result.message, "You clicked the button!", "success").then(function(){
+                    window.location.reload();
+                });
+                form.trigger('reset')
+
+            },
+            error : function(xhr, error){
+                console.log(xhr);
+                console.log(error);
+            }
+        });
+    })
+
     $(document).on('click', '.btn-edit', function(e){
         e.preventDefault();
         $.ajax({
@@ -421,58 +434,19 @@
             },
             success: function (result) {
                 if (result.data) {
-                    var student = $('#editStudent');
-
                     var data = result.data;
 
-                    // student {
-                        student.find('input[name=id]').val(data.id);
-                        student.find('input[name=name]').val(data.name);
-                        student.find('input[name=nisn]').val(data.nisn);
-                        student.find('select[name=jekel]').val(data.jekel);
+                    // rata-rata nilai {
+                        $('.r_mtk').val(data.r_mtk);
+                        $('.r_bing').val(data.r_bing);
+                        $('.r_bind').val(data.r_bind);
+                        $('.r_ipa').val(data.r_ipa);
+                        $('.r_ips').val(data.r_ips);
                     // }
-
-                    // semester1 {
-                        $('.semester1-id').val(data.semester1.id);
-                        $('.semester1-mtk').val(data.semester1.mtk);
-                        $('.semester1-bing').val(data.semester1.bing);
-                        $('.semester1-bind').val(data.semester1.bind);
-                        $('.semester1-ipa').val(data.semester1.ipa);
-                        $('.semester1-ips').val(data.semester1.ips);
-                    // }
-                    // semester2 {
-                        $('.semester2-id').val(data.semester2.id);
-                        $('.semester2-mtk').val(data.semester2.mtk);
-                        $('.semester2-bing').val(data.semester2.bing);
-                        $('.semester2-bind').val(data.semester2.bind);
-                        $('.semester2-ipa').val(data.semester2.ipa);
-                        $('.semester2-ips').val(data.semester2.ips);
-                    // }
-                    // semester3 {
-                        $('.semester3-id').val(data.semester3.id);
-                        $('.semester3-mtk').val(data.semester3.mtk);
-                        $('.semester3-bing').val(data.semester3.bing);
-                        $('.semester3-bind').val(data.semester3.bind);
-                        $('.semester3-ipa').val(data.semester3.ipa);
-                        $('.semester3-ips').val(data.semester3.ips);
-                    // }
-                    // semester4 {
-                        $('.semester4-id').val(data.semester4.id);
-                        $('.semester4-mtk').val(data.semester4.mtk);
-                        $('.semester4-bing').val(data.semester4.bing);
-                        $('.semester4-bind').val(data.semester4.bind);
-                        $('.semester4-ipa').val(data.semester4.ipa);
-                        $('.semester4-ips').val(data.semester4.ips);
-                    // }
-                    // semester5 {
-                        $('.semester5-id').val(data.semester5.id);
-                        $('.semester5-mtk').val(data.semester5.mtk);
-                        $('.semester5-bing').val(data.semester5.bing);
-                        $('.semester5-bind').val(data.semester5.bind);
-                        $('.semester5-ipa').val(data.semester5.ipa);
-                        $('.semester5-ips').val(data.semester5.ips);
-                    // }
-
+                    //result
+                    var nisn = data.nisn;
+                    $('#editJurusan').find('input[name=nisn]').val(data.name+' - '+nisn);
+                    resultValue(nisn);
                     $('#modalEdit').modal('show');
 
                 }else{
@@ -489,21 +463,17 @@
 
     $(document).on('click', '.btn-update', function(e){
         e.preventDefault();
-        var form = $('#editStudent');
+        var form = $('#editJurusan');
         $.ajax({
             type: "POST",
-            url: "{{ route('update-student','') }}/"+form.find("input[name=id]").val(),
+            url: "{{ route('update-jurusan','') }}/"+$(".nisn").val(),
             data: form.serialize(),
             success: function (result) {
                 if(result.status){
-                    updateSemester1();
-                    updateSemester2();
-                    updateSemester3();
-                    updateSemester4();
-                    updateSemester5();
                     $("#modalEdit").modal('hide');
-                    swal(result.message, "You clicked the button!", "success");
-                    readData();
+                    swal(result.message, "You clicked the button!", "success").then(function(){
+                        window.location.reload();
+                    });
                 }else{
                     alert('Data not found!');
                 }
@@ -531,7 +501,7 @@
             if (willDelete) {
                 var inputToken = $('input[name=_token]');
                 $.ajax({
-                    url : "{{ route('delete-score','') }}/"+$(this).data('id'),
+                    url : "{{ route('delete-jurusan','') }}/"+$(this).data('id'),
                     type : 'POST',
                     data : {
                         _token: inputToken.val(),
@@ -540,10 +510,12 @@
 
                     inputToken.val(result.newToken);
                     if(result.status){
-                        readData();
                         swal("Poof! Your imaginary file has been deleted!", {
                         icon: "success",
+                        }).then(function(){
+                            window.location.reload();
                         });
+
                     }else{
                         alert("Data Not Found!!");
                     }

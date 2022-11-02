@@ -58,7 +58,11 @@ Route::middleware(['auth', 'web'])->group(function () {
 
     Route::prefix('/jurusan')->group(function(){
         Route::get('/', [ResultController::class,'index'])->name('jurusan');
-        Route::get('/resultValue', [ResultController::class,'resultValue'])->name('jurusan-resultvalue');
+        Route::get('/getDataJurusan', [ResultController::class,'getData'])->name('getdata-jurusan');
+        Route::get('/resultValue', [ResultController::class,'resultValue'])->name('resultvalue-jurusan');
+        Route::post('/createJurusan', [ResultController::class,'create'])->name('create-jurusan');
+        Route::post('/updateJurusan/{id}', [ResultController::class,'update'])->name('update-jurusan');
+        Route::post('/deleteJurusan/{id}', [ResultController::class,'delete'])->name('delete-jurusan');
     });
 
     Route::prefix('/score')->group(function(){

@@ -10,8 +10,11 @@
 @section('content')
 <div class="row">
     <div class="col-md-2">
-        <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#modalCreate">
+        {{-- <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#modalCreate">
            + Create
+        </button> --}}
+        <button type="button" class="btn btn-block btn-success" data-toggle="modal" data-target="#modalCreate">
+            <i class="fa fa-plus"></i> Tambah Data
         </button>
     </div>
     <div class="col-md-10">
