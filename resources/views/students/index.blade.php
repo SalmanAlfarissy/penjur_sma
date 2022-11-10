@@ -64,11 +64,13 @@
                         <div class="form-group">
                             <label>Name</label>
                             <input type="text" class="form-control" placeholder="Name" name="name" required>
+                            <div class="text-danger name-error"></div>
                         </div>
 
                         <div class="form-group">
                             <label>Nisn</label>
                             <input type="text" class="form-control" placeholder="Nisn" name="nisn" required>
+                            <div class="text-danger nisn-error"></div>
                         </div>
 
                         <div class="form-group">
@@ -102,19 +104,24 @@
                                 <td>1</td>
                                 <td>Semester 1</td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber" placeholder="MTK" name="mtk" min="0" max="100" step="0.001">
+                                    <div class="text-danger s1mtk-error"></div>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber" placeholder="BING" name="bing" min="0" max="100" step="0.001">
+                                    <div class="text-danger s1bing-error"></div>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber" placeholder="BIND" name="bind" min="0" max="100" step="0.001">
+                                    <div class="text-danger s1bind-error"></div>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber" placeholder="IPA" name="ipa" min="0" max="100" step="0.001">
+                                    <div class="text-danger s1ipa-error"></div>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber" placeholder="IPS" name="ips" min="0" max="100" step="0.001">
+                                    <div class="text-danger s1ips-error"></div>
                                 </td>
                             </form>
                         </tr>
@@ -125,19 +132,24 @@
                                 <td>2</td>
                                 <td>Semester 2</td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber" placeholder="MTK" name="mtk" min="0" max="100" step="0.001">
+                                    <div class="text-danger s2mtk-error"></div>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber" placeholder="BING" name="bing" min="0" max="100" step="0.001">
+                                    <div class="text-danger s2bing-error"></div>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber" placeholder="BIND" name="bind" min="0" max="100" step="0.001">
+                                    <div class="text-danger s2bind-error"></div>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber" placeholder="IPA" name="ipa" min="0" max="100" step="0.001">
+                                    <div class="text-danger s2ipa-error"></div>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber" placeholder="IPS" name="ips" min="0" max="100" step="0.001">
+                                    <div class="text-danger s2ips-error"></div>
                                 </td>
                             </form>
                         </tr>
@@ -148,19 +160,24 @@
                                 <td>3</td>
                                 <td>Semester 3</td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber" placeholder="MTK" name="mtk" min="0" max="100" step="0.001">
+                                    <div class="text-danger s3mtk-error"></div>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber" placeholder="BING" name="bing" min="0" max="100" step="0.001">
+                                    <div class="text-danger s3bing-error"></div>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber" placeholder="BIND" name="bind" min="0" max="100" step="0.001">
+                                    <div class="text-danger s3bind-error"></div>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber" placeholder="IPA" name="ipa" min="0" max="100" step="0.001">
+                                    <div class="text-danger s3ipa-error"></div>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber" placeholder="IPS" name="ips" min="0" max="100" step="0.001">
+                                    <div class="text-danger s3ips-error"></div>
                                 </td>
                             </form>
                         </tr>
@@ -171,19 +188,24 @@
                                 <td>4</td>
                                 <td>Semester 4</td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber" placeholder="MTK" name="mtk" min="0" max="100" step="0.001">
+                                    <div class="text-danger s4mtk-error"></div>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber" placeholder="BING" name="bing" min="0" max="100" step="0.001">
+                                    <div class="text-danger s4bing-error"></div>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber" placeholder="BIND" name="bind" min="0" max="100" step="0.001">
+                                    <div class="text-danger s4bind-error"></div>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber" placeholder="IPA" name="ipa" min="0" max="100" step="0.001">
+                                    <div class="text-danger s4ipa-error"></div>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber" placeholder="IPS" name="ips" min="0" max="100" step="0.001">
+                                    <div class="text-danger s4ips-error"></div>
                                 </td>
                             </form>
                         </tr>
@@ -194,19 +216,24 @@
                                 <td>5</td>
                                 <td>Semester 5</td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber" placeholder="MTK" name="mtk" min="0" max="100" step="0.001">
+                                    <div class="text-danger s5mtk-error"></div>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber" placeholder="BING" name="bing" min="0" max="100" step="0.001">
+                                    <div class="text-danger s5bing-error"></div>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber" placeholder="BIND" name="bind" min="0" max="100" step="0.001">
+                                    <div class="text-danger s5bind-error"></div>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber" placeholder="IPA" name="ipa" min="0" max="100" step="0.001">
+                                    <div class="text-danger s5ipa-error"></div>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber" placeholder="IPS" name="ips" min="0" max="100" step="0.001">
+                                    <div class="text-danger s5ips-error"></div>
                                 </td>
                             </form>
                         </tr>
@@ -238,18 +265,18 @@
                         @csrf
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" class="form-control" placeholder="Name" name="name" required>
+                            <input type="text" class="form-control rangenumber" placeholder="Name" name="name" required>
                             <input type="hidden" name="id">
                         </div>
 
                         <div class="form-group">
                             <label>Nisn</label>
-                            <input type="text" class="form-control" placeholder="Nisn" name="nisn" required>
+                            <input type="text" class="form-control rangenumber" placeholder="Nisn" name="nisn" required>
                         </div>
 
                         <div class="form-group">
                             <label>Jenis Kelamin</label>
-                            <select class="form-control" name="jekel">
+                            <select class="form-control rangenumber" name="jekel">
                               <option selected value="L">Laki-Laki</option>
                               <option value="P">Perempuan</option>
                             </select>
@@ -278,19 +305,19 @@
                                 <td>1</td>
                                 <td>Semester 1</td>
                                 <td>
-                                    <input type="number" class="form-control semester1-mtk" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber semester1-mtk" placeholder="MTK" name="mtk" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control semester1-bing" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber semester1-bing" placeholder="BING" name="bing" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control semester1-bind" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber semester1-bind" placeholder="BIND" name="bind" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control semester1-ipa" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber semester1-ipa" placeholder="IPA" name="ipa" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control semester1-ips" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber semester1-ips" placeholder="IPS" name="ips" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                             </form>
                         </tr>
@@ -301,19 +328,19 @@
                                 <td>2</td>
                                 <td>Semester 2</td>
                                 <td>
-                                    <input type="number" class="form-control semester2-mtk" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber semester2-mtk" placeholder="MTK" name="mtk" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control semester2-bing" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber semester2-bing" placeholder="BING" name="bing" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control semester2-bind" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber semester2-bind" placeholder="BIND" name="bind" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control semester2-ipa" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber semester2-ipa" placeholder="IPA" name="ipa" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control semester2-ips" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber semester2-ips" placeholder="IPS" name="ips" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                             </form>
                         </tr>
@@ -324,19 +351,19 @@
                                 <td>3</td>
                                 <td>Semester 3</td>
                                 <td>
-                                    <input type="number" class="form-control semester3-mtk" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber semester3-mtk" placeholder="MTK" name="mtk" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control semester3-bing" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber semester3-bing" placeholder="BING" name="bing" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control semester3-bind" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber semester3-bind" placeholder="BIND" name="bind" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control semester3-ipa" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber semester3-ipa" placeholder="IPA" name="ipa" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control semester3-ips" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber semester3-ips" placeholder="IPS" name="ips" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                             </form>
                         </tr>
@@ -347,19 +374,19 @@
                                 <td>4</td>
                                 <td>Semester 4</td>
                                 <td>
-                                    <input type="number" class="form-control semester4-mtk" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber semester4-mtk" placeholder="MTK" name="mtk" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control semester4-bing" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber semester4-bing" placeholder="BING" name="bing" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control semester4-bind" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber semester4-bind" placeholder="BIND" name="bind" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control semester4-ipa" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber semester4-ipa" placeholder="IPA" name="ipa" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control semester4-ips" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber semester4-ips" placeholder="IPS" name="ips" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                             </form>
                         </tr>
@@ -370,19 +397,19 @@
                                 <td>5</td>
                                 <td>Semester 5</td>
                                 <td>
-                                    <input type="number" class="form-control semester5-mtk" placeholder="MTK" name="mtk" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber semester5-mtk" placeholder="MTK" name="mtk" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control semester5-bing" placeholder="BING" name="bing" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber semester5-bing" placeholder="BING" name="bing" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control semester5-bind" placeholder="BIND" name="bind" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber semester5-bind" placeholder="BIND" name="bind" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control semester5-ipa" placeholder="IPA" name="ipa" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber semester5-ipa" placeholder="IPA" name="ipa" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                                 <td>
-                                    <input type="number" class="form-control semester5-ips" placeholder="IPS" name="ips" onchange="setNumberDecimal" min="0" max="100" step="0.001" value="0.000" required>
+                                    <input type="number" class="form-control rangenumber semester5-ips" placeholder="IPS" name="ips" min="0" max="100" step="0.001" value="0.000" required>
                                 </td>
                             </form>
                         </tr>
@@ -403,14 +430,18 @@
 
 @push('custom-script')
 <script>
-
+    var createposition = 0;
     $(document).ready(function () {
         readData();
     });
 
-    function setNumberDecimal(event) {
-        this.value = parseFloat(this.value).toFixed(3);
-    }
+    $('.rangenumber').on('input',function(){
+        var value = $(this).val();
+        if ((value !== '') && (value.indexOf('.') === -1)) {
+
+            $(this).val(Math.max(Math.min(value, 100), 0));
+        }
+    })
 
     function readData(){
         $.ajax({
@@ -470,11 +501,26 @@
             url: "{{ route('create-semester1') }}",
             data: form.serialize(),
             success: function (result) {
-                form.trigger('reset')
                 console.log('Semester 1 : ',result.message);
+                createposition = createposition + 1;
             },
             error: function(xhr, error){
-                console.log(error);
+                var err = xhr.responseJSON.errors;
+                var mtk = err.mtk ?? '';
+                var bing = err.bing ?? '';
+                var bind = err.bind ?? '';
+                var ipa = err.ipa ?? '';
+                var ips = err.ips ?? '';
+                $(".s1mtk-error").text(xhr.responseJSON.errors.mtk);
+
+                $(".s1bing-error").text(xhr.responseJSON.errors.bing);
+
+                $(".s1bind-error").text(xhr.responseJSON.errors.bind);
+
+                $(".s1ipa-error").text(xhr.responseJSON.errors.ipa);
+
+                $(".s1ips-error").text(xhr.responseJSON.errors.ips);
+
             }
         });
     }
@@ -486,11 +532,25 @@
             url: "{{ route('create-semester2') }}",
             data: form.serialize(),
             success: function (result) {
-                form.trigger('reset')
                 console.log('Semester 2 : ',result.message);
+                createposition = createposition + 1;
             },
             error: function(xhr, error){
-                console.log(error);
+                var err = xhr.responseJSON.errors;
+                var mtk = err.mtk ?? '';
+                var bing = err.bing ?? '';
+                var bind = err.bind ?? '';
+                var ipa = err.ipa ?? '';
+                var ips = err.ips ?? '';
+                $(".s2mtk-error").text(xhr.responseJSON.errors.mtk);
+
+                $(".s2bing-error").text(xhr.responseJSON.errors.bing);
+
+                $(".s2bind-error").text(xhr.responseJSON.errors.bind);
+
+                $(".s2ipa-error").text(xhr.responseJSON.errors.ipa);
+
+                $(".s2ips-error").text(xhr.responseJSON.errors.ips);
             }
         });
     }
@@ -502,11 +562,25 @@
             url: "{{ route('create-semester3') }}",
             data: form.serialize(),
             success: function (result) {
-                form.trigger('reset')
                 console.log('Semester 3 : ',result.message);
+                createposition = createposition + 1;
             },
             error: function(xhr, error){
-                console.log(error);
+                var err = xhr.responseJSON.errors;
+                var mtk = err.mtk ?? '';
+                var bing = err.bing ?? '';
+                var bind = err.bind ?? '';
+                var ipa = err.ipa ?? '';
+                var ips = err.ips ?? '';
+                $(".s3mtk-error").text(xhr.responseJSON.errors.mtk);
+
+                $(".s3bing-error").text(xhr.responseJSON.errors.bing);
+
+                $(".s3bind-error").text(xhr.responseJSON.errors.bind);
+
+                $(".s3ipa-error").text(xhr.responseJSON.errors.ipa);
+
+                $(".s3ips-error").text(xhr.responseJSON.errors.ips);
             }
         });
     }
@@ -518,11 +592,25 @@
             url: "{{ route('create-semester4') }}",
             data: form.serialize(),
             success: function (result) {
-                form.trigger('reset')
                 console.log('Semester 4 : ',result.message);
+                createposition = createposition + 1;
             },
             error: function(xhr, error){
-                console.log(error);
+                var err = xhr.responseJSON.errors;
+                var mtk = err.mtk ?? '';
+                var bing = err.bing ?? '';
+                var bind = err.bind ?? '';
+                var ipa = err.ipa ?? '';
+                var ips = err.ips ?? '';
+                $(".s4mtk-error").text(xhr.responseJSON.errors.mtk);
+
+                $(".s4bing-error").text(xhr.responseJSON.errors.bing);
+
+                $(".s4bind-error").text(xhr.responseJSON.errors.bind);
+
+                $(".s4ipa-error").text(xhr.responseJSON.errors.ipa);
+
+                $(".s4ips-error").text(xhr.responseJSON.errors.ips);
             }
         });
     }
@@ -534,18 +622,38 @@
             url: "{{ route('create-semester5') }}",
             data: form.serialize(),
             success: function (result) {
-                form.trigger('reset')
                 console.log('Semester 5 : ',result.message);
+                readData();
+                $("#modalCreate").modal('hide');
+                swal(result.message, "You clicked the button!", "success");
+                $('#createStudent').trigger("reset");
+                $('#createSemester1').trigger("reset");
+                $('#createSemester2').trigger("reset");
+                $('#createSemester3').trigger("reset");
+                $('#createSemester4').trigger("reset");
+                $('#createSemester5').trigger("reset");
             },
             error: function(xhr, error){
-                console.log(error);
+                var err = xhr.responseJSON.errors;
+                var mtk = err.mtk ?? '';
+                var bing = err.bing ?? '';
+                var bind = err.bind ?? '';
+                var ipa = err.ipa ?? '';
+                var ips = err.ips ?? '';
+                $(".s5mtk-error").text(xhr.responseJSON.errors.mtk);
+
+                $(".s5bing-error").text(xhr.responseJSON.errors.bing);
+
+                $(".s5bind-error").text(xhr.responseJSON.errors.bind);
+
+                $(".s5ipa-error").text(xhr.responseJSON.errors.ipa);
+
+                $(".s5ips-error").text(xhr.responseJSON.errors.ips);
             }
         });
     }
     // create students
-    $(document).on('click','.btn-create', function(e){
-        e.preventDefault();
-
+    function createStudent(){
         var form = $('#createStudent');
         $.ajax({
             type: "POST",
@@ -553,22 +661,52 @@
             data: form.serialize(),
             success: function (result) {
                 $('.student_id').val(result.data.id);
+                createposition = createposition + 1;
                 createSemester1();
                 createSemester2();
                 createSemester3();
                 createSemester4();
                 createSemester5();
-                readData();
-                $("#modalCreate").modal('hide');
-                swal(result.message, "You clicked the button!", "success");
-                form.trigger('reset')
-
             },
             error : function(xhr, error){
-                console.log(xhr);
-                console.log(error);
+                var err = xhr.responseJSON.errors;
+                var name = err.name ?? '';
+                var nisn = err.nisn ?? '';
+                $(".name-error").text(name);
+                $(".nisn-error").text(nisn);
+
             }
         });
+    }
+    $(document).on('click','.btn-create', function(e){
+        e.preventDefault();
+        if (createposition == 0) {
+            createStudent();
+        }else if(createposition == 1){
+            createSemester1();
+            createSemester2();
+            createSemester3();
+            createSemester4();
+            createSemester5();
+        }else if (createposition == 2) {
+            createSemester2();
+            createSemester3();
+            createSemester4();
+            createSemester5();
+        }else if (createposition == 3) {
+            createSemester3();
+            createSemester4();
+            createSemester5();
+        }else if (createposition == 4) {
+            createSemester4();
+            createSemester5();
+        }else if (createposition == 5) {
+            createSemester5();
+        }else {
+            swal("please complete the form! ", "You clicked the button!", "warning");
+        }
+
+
     })
 
 // }

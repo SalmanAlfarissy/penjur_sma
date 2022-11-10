@@ -59,17 +59,20 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label>Name</label>
-                    <input type="text" class="form-control" placeholder="Name" name="name" required>
+                    <input type="text" class="form-control" placeholder="Name" name="name">
+                    <div class="text-danger error-name"></div>
                 </div>
 
                 <div class="form-group">
                     <label>Nip</label>
-                    <input type="text" class="form-control" placeholder="Nip" name="nip" required>
+                    <input type="text" class="form-control" placeholder="Nip" name="nip">
+                    <div class="text-danger error-nip"></div>
                 </div>
 
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" class="form-control" placeholder="Password" name="password" required>
+                    <input type="password" class="form-control" placeholder="Password" name="password">
+                    <div class="text-danger error-password"></div>
                 </div>
 
             </div>
@@ -97,18 +100,21 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label>Name</label>
-                    <input type="text" class="form-control" placeholder="Name" name="name" required>
+                    <input type="text" class="form-control" placeholder="Name" name="name">
                     <input type="hidden" name="id">
+                    <div class="text-danger error-name"></div>
                 </div>
 
                 <div class="form-group">
                     <label>Nip</label>
-                    <input type="text" class="form-control" placeholder="Nip" name="nip" required>
+                    <input type="text" class="form-control" placeholder="Nip" name="nip">
+                    <div class="text-danger error-nip"></div>
                 </div>
 
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" class="form-control" placeholder="Password" name="password" required>
+                    <input type="password" class="form-control" placeholder="Password" name="password">
+                    <div class="text-danger error-password"></div>
                 </div>
 
             </div>
@@ -193,9 +199,13 @@
 
             },
             error : function(xhr, error){
-                console.log(xhr);
-                console.log(error);
-                console.log(row);
+                var name = xhr.responseJSON.errors.name ?? '';
+                var nip = xhr.responseJSON.errors.nip ?? '';
+                var password = xhr.responseJSON.errors.password ?? '';
+                $('.error-name').text(name);
+                $('.error-nip').text(nip);
+                $('.error-password').text(password);
+
             }
         });
     })
@@ -246,8 +256,12 @@
                 }
             },
             error: function(xhr, error){
-                console.log(xhr);
-                console.log(error);
+                var name = xhr.responseJSON.errors.name ?? '';
+                var nip = xhr.responseJSON.errors.nip ?? '';
+                var password = xhr.responseJSON.errors.password ?? '';
+                $('.error-name').text(name);
+                $('.error-nip').text(nip);
+                $('.error-password').text(password);
             }
         });
 

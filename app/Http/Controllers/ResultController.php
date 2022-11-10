@@ -63,7 +63,10 @@ class ResultController extends Controller
     }
 
     public function create(Request $request){
-        $nisn = Student::where('nisn',$request->nisn)->first();
+        $validate = $request->validate([
+            'nisn'=>'required'
+        ]);
+        $nisn = Student::where('nisn',$validate['nisn'])->first();
         $data = new Result();
         $data->student_id = $nisn->id;
         $data->result = $request->result;

@@ -24,8 +24,9 @@
               <span class="sr-only">Toggle Dropdown</span>
             </button>
             <div class="dropdown-menu" role="menu">
-              <a class="dropdown-item" target="_blank" href="{{ route('cetak-excel') }}">Excel</a>
-              <a class="dropdown-item" target="_blank" href="{{ route('cetak-pdf') }}">Pdf</a>
+              <a class="dropdown-item" target="_blank" href="{{ route('cetak-pdf') }}">All</a>
+              <a class="dropdown-item" target="_blank" href="{{ route('cetak-pdf') }}?jurusan=IPA">IPA</a>
+              <a class="dropdown-item" target="_blank" href="{{ route('cetak-pdf') }}?jurusan=IPS">IPS</a>
             </div>
         </div>
     </div>
@@ -72,13 +73,14 @@
                         @csrf
                         <div class="form-group">
                             <label>Name & NISN</label>
-                            <select class="form-control select2-create" style="width: 100%;" name="nisn">
+                            <select class="form-control select2-create" style="width: 100%;" name="nisn" required>
                                 <option selected value="">==Please Select Item==</option>
                                 @foreach ($data as $item )
                                     <option value="{{ $item->nisn }}">{{ $item->name }} - {{ $item->nisn }}</option>
                                 @endforeach
 
                             </select>
+                            <div class="text-danger nisn-error"></div>
                         </div>
                         <input type="hidden" class="result" name="result">
                         <input type="hidden" class="jurusan" name="jurusan">
@@ -418,8 +420,8 @@
 
             },
             error : function(xhr, error){
-                console.log(xhr);
-                console.log(error);
+                var err = xhr.responseJSON.errors.nisn != null ? "Please select this item" : "";
+                $('.nisn-error').text(err);
             }
         });
     })

@@ -27,7 +27,7 @@ class StudentController extends Controller
     public function create(Request $request){
         $validate = $request->validate([
             'name'=>'required',
-            'nisn'=>'required',
+            'nisn'=>'required|unique:student,nisn',
             'jekel'=>'required'
         ]);
 
