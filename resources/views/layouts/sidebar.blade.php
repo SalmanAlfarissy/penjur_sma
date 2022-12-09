@@ -48,14 +48,16 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a href="{{ route('user') }}" class="nav-link {{ request()->is('user') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-users"></i>
-                        <p>
-                            User
-                        </p>
-                    </a>
-                </li>
+                @if (Auth::user()->level == 'admin')
+                    <li class="nav-item">
+                        <a href="{{ route('user') }}" class="nav-link {{ request()->is('user') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>
+                                User
+                            </p>
+                        </a>
+                    </li>
+                @endif
 
                 <li class="nav-item">
                     <a href="{{ route('student') }}" class="nav-link {{ request()->is('student') ? 'active' : '' }}">

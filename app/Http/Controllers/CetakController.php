@@ -26,7 +26,7 @@ class CetakController extends Controller
 
         $pdf = App::make('dompdf.wrapper');
         $pdf = Pdf::loadView('cetak.pdf', compact('data'));
-        return $data;
+        // return $data;
         return $pdf->stream();
     }
 }

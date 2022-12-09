@@ -4,6 +4,7 @@ use App\Http\Controllers\CetakController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ImportController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ScoreController;
@@ -39,10 +40,13 @@ Route::get('/logout', function () {
 })->name('logout');
 
 
-Route::middleware(['auth', 'web'])->group(function () {
+Route::middleware(['checkLevel:admin,guru', 'web'])->group(function () {
     Route::get('/dashboard', [HomeController::class,'index'])->name('dashboard');
 
-    Route::prefix('/user')->group(function(){
+    Route::post('importData', [ImportController::class,'importData'])->name('importData');
+    Route::post('getDataImport', [ImportController::class,'getDataImport'])->name('getDataImport');
+
+    Route::group(['middleware'=>['checkLevel:admin'], 'prefix'=>'/user'],function(){
         Route::get('/', [UserController::class,'index'])->name('user');
         Route::get('/getDataUser', [UserController::class,'getData'])->name('getdata-user');
         Route::post('/createUser', [UserController::class,'create'])->name('create-user');

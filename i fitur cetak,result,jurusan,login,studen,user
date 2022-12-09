@@ -1,0 +1,53 @@
+[33mcommit 33724c42f28619d083c9880bbf13eeb25419a241[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: SalmanAlfarissy <salman.alfarissy26@gmail.com>
+Date:   Thu Nov 10 21:02:52 2022 +0700
+
+    revisi fitur cetak,result,jurusan,login,studen,user
+
+[33mcommit baca3c635f30aae9bc9996bab2dd7fe6a0e0055e[m
+Author: SalmanAlfarissy <salman.alfarissy26@gmail.com>
+Date:   Thu Nov 3 09:45:15 2022 +0700
+
+    Make seeder user
+
+[33mcommit 8ccb468eea21d8a77760654d01a691c3e0782644[m
+Author: SalmanAlfarissy <salman.alfarissy26@gmail.com>
+Date:   Thu Nov 3 00:26:08 2022 +0700
+
+    Pembulatan hasil
+
+[33mcommit 1e169d4ea348b7ed06aaf6080e91e26cf6bbf33d[m
+Author: SalmanAlfarissy <salman.alfarissy26@gmail.com>
+Date:   Thu Nov 3 00:22:05 2022 +0700
+
+    Fitur cetak
+
+[33mcommit a441bfc3268798b07bc7e436b617366021cc70ba[m
+Author: SalmanAlfarissy <salman.alfarissy26@gmail.com>
+Date:   Wed Nov 2 22:10:29 2022 +0700
+
+    Fitur jurusan clear
+
+[33mcommit 6d596e7c22e5e30c6ee886095fd8622ef32d0cf9[m
+Author: SalmanAlfarissy <salman.alfarissy26@gmail.com>
+Date:   Tue Nov 1 23:35:37 2022 +0700
+
+    Fitur Jurursan Part 1
+
+[33mcommit ecc3b25d0e82656052e83e99feac9d24dbe186a7[m
+Author: SalmanAlfarissy <salman.alfarissy26@gmail.com>
+Date:   Mon Oct 31 11:52:45 2022 +0700
+
+    fitur student clear
+
+[33mcommit a378f8e702a52bfa0a0e849a44f098f596dc5adb[m
+Author: SalmanAlfarissy <salman.alfarissy26@gmail.com>
+Date:   Sun Oct 30 20:39:50 2022 +0700
+
+    fitur create student
+
+[33mcommit 4ba75d18957f430f6c7c7a4536f9042ef0f80040[m
+Author: SalmanAlfarissy <salman.alfarissy26@gmail.com>
+Date:   Sat Oct 29 19:27:58 2022 +0700
+
+    Fitur User

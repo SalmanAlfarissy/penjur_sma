@@ -10,4 +10,5 @@ class Semester1 extends Model
     use HasFactory;
     protected $table = 'semester1';
     protected $id = 'id';
+    protected $guarded = ['id'];
 }

@@ -10,4 +10,5 @@ class Result extends Model
     use HasFactory;
     protected $table = 'result';
     protected $id = 'id';
+    protected $guarded = ['id'];
 }

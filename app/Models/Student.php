@@ -16,6 +16,8 @@ class Student extends Model
     protected $table = 'student';
     protected $id = 'id';
 
+    protected $guarded = ['id'];
+
     public function semester1(){
         return $this->belongsTo(Semester1::class, 'id', 'student_id');
     }

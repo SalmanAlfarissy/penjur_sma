@@ -9,15 +9,22 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-2">
-        {{-- <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#modalCreate">
-           + Create
-        </button> --}}
-        <button type="button" class="btn btn-block btn-success" data-toggle="modal" data-target="#modalCreate">
+    <div class="col-md-3">
+        {{-- <button type="button" class="btn btn-block btn-success" data-toggle="modal" data-target="#modalCreate">
             <i class="fa fa-plus"></i> Tambah Data
-        </button>
+        </button> --}}
+        <div class="btn-group">
+            <button type="button" class="btn btn-success"><i class="fa fa-plus"></i> Tambah Data</button>
+            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <div class="dropdown-menu" role="menu" style="">
+              <button type="button" class="dropdown-item" data-toggle="modal" data-target="#modalCreate">Manual</button>
+              <button type="button" class="dropdown-item" data-toggle="modal" data-target="#modalImport">Excel</button>
+            </div>
+        </div>
     </div>
-    <div class="col-md-10">
+    <div class="col-md-9">
     </div>
 
     <div class="col-md-12">
@@ -44,6 +51,91 @@
                 </table>
             </div>
         </div>
+    </div>
+</div>
+
+<!-- Modal Import-->
+<div class="modal fade" id="modalImport" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <form id="form-import" enctype="multipart/form-data">
+            @csrf
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Import Data Excel</h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Input excel ...<a href="excel/template.xlsx" target="_blank" rel="noopener noreferrer">template.xlsx</a> </label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="fileExcel" name="fileExcel">
+                        <label class="custom-file-label" for="fileExcel">Choose file</label>
+                    </div>
+                    <div class="text-danger fileExcel-error"></div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="card-header">
+                        <h3 class="card-title">List Data</h3>
+                    </div>
+                    <div class="card">
+
+                        <div class="card-body table-responsive">
+                            <table class="table table-bordered text-nowrap" id="tableImport">
+                                <thead>
+                                    <tr>
+                                        <th colspan="4"></th>
+                                        <th colspan="5" style="text-align: center">Semester 1</th>
+                                        <th colspan="5" style="text-align: center">Semester 2</th>
+                                        <th colspan="5" style="text-align: center">Semester 3</th>
+                                        <th colspan="5" style="text-align: center">Semester 4</th>
+                                        <th colspan="5" style="text-align: center">Semester 5</th>
+                                    </tr>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Name</th>
+                                        <th>Nisn</th>
+                                        <th>Jekel</th>
+                                        <th>MTK</th>
+                                        <th>BING</th>
+                                        <th>BIND</th>
+                                        <th>IPA</th>
+                                        <th>IPS</th>
+                                        <th>MTK</th>
+                                        <th>BING</th>
+                                        <th>BIND</th>
+                                        <th>IPA</th>
+                                        <th>IPS</th>
+                                        <th>MTK</th>
+                                        <th>BING</th>
+                                        <th>BIND</th>
+                                        <th>IPA</th>
+                                        <th>IPS</th>
+                                        <th>MTK</th>
+                                        <th>BING</th>
+                                        <th>BIND</th>
+                                        <th>IPA</th>
+                                        <th>IPS</th>
+                                        <th>MTK</th>
+                                        <th>BING</th>
+                                        <th>BIND</th>
+                                        <th>IPA</th>
+                                        <th>IPS</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save Data</button>
+            </div>
+        </form>
+      </div>
     </div>
 </div>
 
@@ -434,6 +526,91 @@
     $(document).ready(function () {
         readData();
     });
+
+    $(document).on('input', '#form-import',function (e) {
+        e.preventDefault();
+        let form = $(this);
+        let formData = new FormData(form[0]);
+        $.ajax({
+            type: "POST",
+            url: "{{ route('getDataImport') }}",
+            data: formData,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            cache: false,
+            success: function (result) {
+                $('#tableImport').DataTable({
+                    "paging":true,
+                    "ordering":true,
+                    "destroy":true,
+                    "data": result.data,
+                    "columns": [
+                        {"data": "no"},
+                        {"data": "name"},
+                        {"data": "nisn"},
+                        {"data": "jekel"},
+                        {"data": "mtk1"},
+                        {"data": "bing1"},
+                        {"data": "bind1"},
+                        {"data": "ipa1"},
+                        {"data": "ips1"},
+                        {"data": "mtk2"},
+                        {"data": "bing2"},
+                        {"data": "bind2"},
+                        {"data": "ipa2"},
+                        {"data": "ips2"},
+                        {"data": "mtk3"},
+                        {"data": "bing3"},
+                        {"data": "bind3"},
+                        {"data": "ipa3"},
+                        {"data": "ips3"},
+                        {"data": "mtk4"},
+                        {"data": "bing4"},
+                        {"data": "bind4"},
+                        {"data": "ipa4"},
+                        {"data": "ips4"},
+                        {"data": "mtk5"},
+                        {"data": "bing5"},
+                        {"data": "bind5"},
+                        {"data": "ipa5"},
+                        {"data": "ips5"},
+                    ]
+                });
+            },
+            error: function (xhr, error) {
+                console.log(error);
+            }
+        });
+    });
+
+    $(document).on('submit', '#form-import',function (e) {
+        e.preventDefault();
+        let form = $(this);
+        let formData = new FormData(form[0]);
+        $.ajax({
+            type: "POST",
+            url: "{{ route('importData') }}",
+            data: formData,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            cache: false,
+            success: function (result) {
+                swal(result.message, "You clicked the button!", "success");
+                $(".fileExcel-error").text('');
+                $("#modalImport").modal('hide');
+                form.trigger('reset');
+                readData();
+            },
+            error: function (xhr, error) {
+                var err = xhr.responseJSON.errors;
+                var errorfile = err.fileExcel ?? '';
+                $(".fileExcel-error").text(errorfile);
+            }
+        });
+    });
+
 
     $('.rangenumber').on('input',function(){
         var value = $(this).val();

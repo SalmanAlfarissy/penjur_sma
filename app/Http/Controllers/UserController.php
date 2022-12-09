@@ -20,7 +20,7 @@ class UserController extends Controller
         $data = User::get();
         foreach ($data as $index => $item) {
             $item->no = $index+1;
-            $item->date = date("d-M-Y H:i:s");
+            $item->date = $item->created_at->format("d-M-Y H:i:s");
         }
         return $this->result('Get Data Success..',$data,true);
     }
@@ -29,7 +29,8 @@ class UserController extends Controller
         $validate = $request->validate([
             'name'=>'required',
             'nip'=>'required|unique:users,nip',
-            'password'=>'required|min:6'
+            'password'=>'required|min:6',
+            'level'=>'required'
         ]);
 
         $data = new User();
@@ -37,6 +38,7 @@ class UserController extends Controller
         $data->nip  = $validate['nip'];
         $password = Hash::make($validate['password']);
         $data->password = $password;
+        $data->level  = $validate['level'];
         $data->save();
 
         return $this->result('Create Data Success!!',$data,true);
@@ -47,7 +49,8 @@ class UserController extends Controller
         $validate = $request->validate([
             'name'=>'required',
             'nip'=>'required',
-            'password'=>'required|min:6'
+            'password'=>'required|min:6',
+            'level'=>'required'
         ]);
 
         $data = User::find($id);
@@ -55,6 +58,7 @@ class UserController extends Controller
         $data->nip  = $validate['nip'];
         $password = Hash::make($validate['password']);
         $data->password = $password;
+        $data->level  = $validate['level'];
         $data->save();
 
         return $this->result('Update Data Success!!',$data,true);

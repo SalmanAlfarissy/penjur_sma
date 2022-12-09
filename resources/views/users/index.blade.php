@@ -33,6 +33,7 @@
                             <th>No</th>
                             <th>Name</th>
                             <th>Nip</th>
+                            <th>Level</th>
                             <th>Created At</th>
                             <th>Action</th>
                         </tr>
@@ -73,6 +74,14 @@
                     <label>Password</label>
                     <input type="password" class="form-control" placeholder="Password" name="password">
                     <div class="text-danger error-password"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Level</label>
+                    <select class="form-control" name="level">
+                        <option selected value="admin">Admin</option>
+                        <option value="guru">Guru</option>
+                    </select>
                 </div>
 
             </div>
@@ -117,6 +126,14 @@
                     <div class="text-danger error-password"></div>
                 </div>
 
+                <div class="form-group">
+                    <label>Level</label>
+                    <select class="form-control" name="level">
+                        <option selected value="admin">Admin</option>
+                        <option value="guru">Guru</option>
+                    </select>
+                </div>
+
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -155,12 +172,13 @@
                         {"data": "no"},
                         {"data": "name"},
                         {"data": "nip"},
+                        {"data": "level"},
                         {"data": "date"},
                         {"data": "id"},
                     ],
                     "columnDefs":[
                         {
-                            "targets" : 4,
+                            "targets" : 5,
                             "data" : "id",
                             "render":function(data, type, row){
                                 return '<div class="btn-group">'+
@@ -226,6 +244,7 @@
                     form.find('input[name=name]').val(data.name);
                     form.find('input[name=nip]').val(data.nip);
                     form.find('input[name=password]').val(data.password);
+                    form.find('select[name=level]').val(data.level);
                     $('#modalEdit').modal('show');
 
                 }else{
